@@ -1,0 +1,12 @@
+<h1>Modify user</h1>
+<form action="/user/update" method="POST">
+    NOM:
+    <input type="text" name="aname" value="<%= aname %> "/><br/>
+    PRENOM:
+    <input type="text" name="qty" value="<%= qty %>"/><br/>
+    <input type="hidden" name="iditem" value="<%= iditem %>">
+    <input type="submit" value="Sauver" name="save"><br>
+    <!--
+    <input type="submit" value="Retour" formaction="/user">
+    -->
+</form>

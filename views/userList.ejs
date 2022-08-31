@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body style="width: 500px; font-family: Arial; text-size-adjust: 12px; border: 1px;border-color: lightgray;border-style: solid;margin: 10px;">
+        <h1 >Liste des articles à acheter</h1>
+        <ul>
+            <% for( let i = 0; i < users.length ; i++ ) { %>
+                <li style="background-color: lightgrey; margin: 5px 5px;">
+                    
+                    
+                    <form action="/user" method="GET">
+                        <%= users[i].aname %> <%= users[i].qty %>
+                        <input type="submit" style="background-color: steelblue; color: white;" value="Effacer" formaction="/user/delete/<%= users[i].iditem %> " >
+                        <input type="submit" style="background-color: steelblue; color: white;" value="Acheter" formaction="/user/update/<%= users[i].iditem %> " >
+                    </form><!--
+                    <a href="/user/update/<%= users[i].iditem %> ">Modify</a> 
+                    <a href="/user/delete/<%= users[i].iditem %> ">Remove</a> 
+                    -->
+                </li>
+            <% } %>
+        </ul>
+        <form action="/user/add" method="POST">
+            <input type="submit" value="Ajouter un article" style="background-color: steelblue; color: white;" formaction="/user/add" >
+        </form>
+        
+    <!-- #region <img src="/image/node.png" alt="">-->
+    </body>
+</html> 
