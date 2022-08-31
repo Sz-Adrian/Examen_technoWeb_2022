@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1 >Liste des articles à acheter</h1>
+        <ul>
+            <% for( let i = 0; i < users.length ; i++ ) { %>
+                <li>
+                    
+                    
+                    <form action="/user" method="GET">
+                        <%= users[i].aname %> <%= users[i].qty %>
+                        <input type="submit" value="Effacer" formaction="/user/delete/<%= users[i].iditem %> " >
+                        <input type="submit" value="Acheter" formaction="/user/update/<%= users[i].iditem %> " >
+                    </form><!--
+                    <a href="/user/update/<%= users[i].iditem %> ">Modify</a> 
+                    <a href="/user/delete/<%= users[i].iditem %> ">Remove</a> 
+                    -->
+                </li>
+            <% } %>
+        </ul>
+        <form action="/user/add" method="POST">
+            <input type="submit" value="Ajouter un article" formaction="/user/add" >
+        </form>
+        
+    <!-- #region <img src="/image/node.png" alt="">-->
+    </body>
+</html> 
